@@ -2,11 +2,11 @@ const express = require('express')
 const generate = require('shortid').generate
 const cors = require('cors')
 const app = express()
-
+require('dotenv').config()
 app.use(express.json())
 app.use(cors())
 
-const PORT = 5000
+const PORT  = process.env.PORT 
 
 let users = [
     { id: generate(), name: 'Tom', bio: 'Look im tom and i do things with the name tom' }
